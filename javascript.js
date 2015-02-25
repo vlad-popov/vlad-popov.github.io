@@ -23,14 +23,17 @@ window.onload = function addTask() {
 
     for (var i = 0; i < tasks.length; i++) {
         var newListElem = document.createElement('li');
-        if(tasks[i].name === 'completed') {
+
+        if (tasks[i].status === 'completed') {
             newListElem.className = 'completed'
         }
+
         newListElem.innerHTML += '<div class="view">\
         <input class="toggle" type="checkbox">\
         <label>' + tasks[i].name + '</label>\
         <button class="destroy"></button>\
     </div>';
+
         list.appendChild(newListElem);
         count.innerHTML = i + 1;
     }
@@ -42,6 +45,9 @@ window.onload = function addTask() {
 //    console.log(document.getElementById('main'));
 };
 
+var addTasksForm = function () {
+
+};
 
 function showActive() {
     var list = document.getElementById('todo-list');
