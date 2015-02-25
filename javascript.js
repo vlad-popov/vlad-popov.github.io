@@ -17,22 +17,18 @@ var tasks = [
     }
 ];
 
-window.onload = function addTask() {
+
+var addTasks = function addTasks() {
     var list = document.getElementById('todo-list'),
         count = document.getElementById('todo-count').firstChild;
 
+    list.innerHTML = '';
+
     for (var i = 0; i < tasks.length; i++) {
-        var newListElem = document.createElement('li');
+        newListElem = document.createElement('li');
 
-        if (tasks[i].status === 'completed') {
-            newListElem.className = 'completed'
-        }
-
-        newListElem.innerHTML += '<div class="view">\
-        <input class="toggle" type="checkbox">\
-        <label>' + tasks[i].name + '</label>\
-        <button class="destroy"></button>\
-    </div>';
+        makeCompleted(i);
+        getTask(i);
 
         list.appendChild(newListElem);
         count.innerHTML = i + 1;
@@ -42,11 +38,6 @@ window.onload = function addTask() {
         document.getElementById('main').style.display = '';
         document.getElementById('footer').style.display = '';
     }
-//    console.log(document.getElementById('main'));
-};
-
-var addTasksForm = function () {
-
 };
 
 function showActive() {
@@ -55,14 +46,28 @@ function showActive() {
 
     for (var i = 0; i < tasks.length; i++) {
         if (tasks[i].status === 'active') {
-            var newListElem = document.createElement('li');
+            newListElem = document.createElement('li');
 
-            newListElem.innerHTML += '<div class="view">\
-                <input class="toggle" type="checkbox">\
-                <label>' + tasks[i].name + '</label>\
-                <button class="destroy"></button>\
-            </div>';
+            getTask(i);
+
             list.appendChild(newListElem);
         }
     }
 }
+
+var getTask = function (i) {
+    newListElem.innerHTML += '<div class="view">\
+        <input class="toggle" type="checkbox">\
+        <label>' + tasks[i].name + '</label>\
+        <button class="destroy"></button>\
+    </div>';
+
+};
+
+var makeCompleted = function (i) {
+    if (tasks[i].status === 'completed') {
+        newListElem.className = 'completed'
+    }
+    return newListElem
+};
+
