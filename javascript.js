@@ -23,7 +23,9 @@ window.onload = function addTask() {
 
     for (var i = 0; i < tasks.length; i++) {
         var newListElem = document.createElement('li');
-
+        if(tasks[i].name === 'completed') {
+            newListElem.className = 'completed'
+        }
         newListElem.innerHTML += '<div class="view">\
         <input class="toggle" type="checkbox">\
         <label>' + tasks[i].name + '</label>\
