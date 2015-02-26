@@ -1,19 +1,19 @@
 var tasks = [
     {
         name: 'Покормить кота',
-        status: 'active'
+        status: 'Active'
     },
     {
         name: 'Помыть кота',
-        status: 'completed'
+        status: 'Completed'
     },
     {
         name: 'Постричь кота',
-        status: 'active'
+        status: 'Active'
     },
     {
         name: 'Продать кота',
-        status: 'completed'
+        status: 'Completed'
     }
 ];
 
@@ -40,14 +40,17 @@ var addTasks = function addTasks() {
     }
 };
 
-function showActive() {
-    var list = document.getElementById('todo-list');
+function selected() {
+    var list = document.getElementById('todo-list'),
+        currentTarget = window.event.target;
+
     list.innerHTML = '';
 
     for (var i = 0; i < tasks.length; i++) {
-        if (tasks[i].status === 'active') {
+        if (tasks[i].status === currentTarget.innerHTML) {
+            currentTarget.className = 'selected';
             newListElem = document.createElement('li');
-
+            makeCompleted(i);
             getTask(i);
 
             list.appendChild(newListElem);
@@ -65,8 +68,8 @@ var getTask = function (i) {
 };
 
 var makeCompleted = function (i) {
-    if (tasks[i].status === 'completed') {
-        newListElem.className = 'completed'
+    if (tasks[i].status === 'Completed') {
+        newListElem.className = 'сompleted'
     }
     return newListElem
 };
