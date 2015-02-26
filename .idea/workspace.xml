@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b8f470-da06-4006-9498-5d5eb0d0a90a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript.js" afterPath="$PROJECT_DIR$/javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vlad-popov.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="645">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -39,11 +39,12 @@
       <file leaf-file-name="javascript.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javascript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7410359" vertical-offset="177" max-vertical-offset="1230">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.7424893" vertical-offset="1086" max-vertical-offset="1785">
+              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
               <folding>
-                <marker date="1424944412000" expanded="true" signature="605:613" placeholder="..." />
-                <marker date="1424944412000" expanded="true" signature="1418:1483" placeholder="..." />
+                <marker date="1424962158000" expanded="true" signature="1618:1721" placeholder="..." />
+                <marker date="1424962158000" expanded="true" signature="1618:1694" placeholder="..." />
+                <marker date="1424962158000" expanded="true" signature="2171:2324" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -134,6 +135,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/vladislav/www/vlad-popov.github.io/index.html" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -247,18 +249,19 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="645">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7410359" vertical-offset="177" max-vertical-offset="1230">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.7424893" vertical-offset="1086" max-vertical-offset="1785">
+          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
-            <marker date="1424944412000" expanded="true" signature="605:613" placeholder="..." />
-            <marker date="1424944412000" expanded="true" signature="1418:1483" placeholder="..." />
+            <marker date="1424962158000" expanded="true" signature="1618:1721" placeholder="..." />
+            <marker date="1424962158000" expanded="true" signature="1618:1694" placeholder="..." />
+            <marker date="1424962158000" expanded="true" signature="2171:2324" placeholder="..." />
           </folding>
         </state>
       </provider>
