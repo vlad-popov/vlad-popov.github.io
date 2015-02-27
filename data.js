@@ -1,7 +1,7 @@
 var tasks = [
     {
         name: 'Покормить кота',
-        status: 'Completed'
+        status: 'Active'
     },
     {
         name: 'Помыть кота',
