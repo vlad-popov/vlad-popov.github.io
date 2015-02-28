@@ -8,4 +8,5 @@ var clearCompleted = function () {
             tasks[i] = undefined;
         }
     }
+
 };

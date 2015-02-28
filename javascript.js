@@ -8,7 +8,7 @@ var addTasks = function addTasks() {
         var li = document.createElement('li');
 
         if (tasks[i] === undefined) {
-            while (tasks[i] === undefined || i > tasks.length) {
+            while (tasks[i] === undefined && i < tasks.length) {
                 i++
             }
         }
@@ -34,3 +34,15 @@ var addTasks = function addTasks() {
 };
 
 
+var makeAllCompleted = function () {
+    var li = document.getElementById('todo-list').children;
+    document.getElementById('clear-completed').style.display = '';
+    for(var i = 0; i < tasks.length; i++) {
+        if(tasks[i] === undefined) {
+
+        } else if (tasks[i].status === 'Active') {
+            tasks[i].status = 'Completed';
+            li[i].className = 'completed'
+        }
+    }
+};
