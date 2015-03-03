@@ -11,16 +11,18 @@
     <script type="text/javascript" src="makeCompleted.js"></script>
     <script type="text/javascript" src="showCompleted.js"></script>
     <script type="text/javascript" src="clearCompleted.js"></script>
+    <script type="text/javascript" src="counter.js"></script>
+    <script type="text/javascript" src="makeAllCompleted.js"></script>
     <script type="text/javascript" src="javascript.js"></script>
 </head>
 <body onload="addTasks()">
 <section id="todoapp">
     <header id="header">
         <h1>todos</h1>
-        <input id="new-todo" placeholder="What needs to be done?" autofocus="">
+        <input id="new-todo" placeholder="What needs to be done?" autofocus="" onkeypress="addTask()">
     </header>
     <section id="main" style="display: none;">
-        <input id="toggle-all" type="checkbox" onclick="makeAllCompleted()">
+        <input id="toggle-all" type="checkbox" onclick="makeAllCompleted(this)">
         <label for="toggle-all">Mark all as complete</label>
         <ul id="todo-list"></ul>
     </section>

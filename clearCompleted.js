@@ -1,12 +1,14 @@
 var clearCompleted = function () {
-    var todoList = document.getElementById('todo-list').getElementsByTagName('li');
+    var length = tasks.length,
+        i = 0;
 
-    for(var i = 0; i < tasks.length; i++) {
-        console.log(tasks);
-        if (tasks[i] === undefined || tasks[i].status === 'Completed') {
-            todoList[i].innerHTML = '';
-            tasks[i] = undefined;
+    for (i; i < length; i++) {
+        if (tasks[i] === undefined) {
+            break
+        } else if (tasks[i].status === 'Completed') {
+            tasks.splice(i, 1);
+            i--;
         }
     }
-
+    addTasks();
 };

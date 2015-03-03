@@ -1,12 +1,15 @@
 var showCompleted = function () {
     var list = document.getElementById('todo-list'),
-        count = document.getElementById('todo-count').firstChild;
+        count = document.getElementById('todo-count').firstChild,
+        old = document.getElementsByClassName('selected'),
+        length = tasks.length;
 
+    old[0].classList.remove('selected');
     list.innerHTML = '';
 
     window.event.target.className = 'selected';
 
-    for (var i = 0; i < tasks.length; i++) {
+    for (var i = 0; i < length; i++) {
 
         if (tasks[i] === undefined) {
 

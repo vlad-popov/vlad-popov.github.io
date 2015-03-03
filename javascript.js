@@ -1,48 +1,50 @@
 var addTasks = function addTasks() {
     var list = document.getElementById('todo-list'),
-        count = document.getElementById('todo-count').firstChild;
+        old = document.getElementsByClassName('selected'),
+        length = tasks.length,
+        i = 0;
+
+    event.target.className = 'selected';
 
     list.innerHTML = '';
 
-    for (var i = 0; i < tasks.length; i++) {
+    for (i; i < length; i++) {
         var li = document.createElement('li');
 
-        if (tasks[i] === undefined) {
-            while (tasks[i] === undefined && i < tasks.length) {
-                i++
-            }
-        }
+            li.innerHTML = getTask(i, tasks[i].name);
+            list.appendChild(li);
 
-        li.innerHTML = getTask(i, tasks[i].name);
-
-        list.appendChild(li);
-// разобраться с чекбоксом
         if (tasks[i].status === 'Completed') {
-//            var input = li.getElementsByTagName('input');
             li.className = 'completed';
-//            input.setAttribute("checked", "checked");
             document.getElementById('clear-completed').style.display = '';
         }
     }
 
-    count.innerHTML = tasks.length;
-
-    if (count.innerHTML > 0) {
-        document.getElementById('main').style.display = '';
-        document.getElementById('footer').style.display = '';
-    }
+    counter(length);
 };
 
 
-var makeAllCompleted = function () {
-    var li = document.getElementById('todo-list').children;
-    document.getElementById('clear-completed').style.display = '';
-    for(var i = 0; i < tasks.length; i++) {
-        if(tasks[i] === undefined) {
+var addTask = function () {
+    var input = document.getElementById('new-todo'),
+        newTodo = {};
 
-        } else if (tasks[i].status === 'Active') {
-            tasks[i].status = 'Completed';
-            li[i].className = 'completed'
-        }
+    if (event.keyCode === 13 && input.value === '') {
+        return false;
+    } else if (event.keyCode === 13) {
+        newTodo.name = input.value;
+        newTodo.status = 'Active';
+        tasks.push(newTodo);
+        addTasks();
+        input.value = '';
     }
+};
+//////////////////////// доделать
+var correction = function () {
+
+    if (event.target.className === '') {
+        event.target.classList.add('editing');
+    } else if (event.target.className != '') {
+        event.target.classList.remove('editing');
+    }
+//    document.onclick = parent.getElementsByTagName('label').classList.remove('editing');
 };
