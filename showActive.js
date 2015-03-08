@@ -3,6 +3,7 @@ var showActive = function () {
         count = document.getElementById('todo-count').firstChild,
         old = document.getElementsByClassName('selected'),
         length = tasks.length;
+
     old[0].classList.remove('selected');
     list.innerHTML = '';
 

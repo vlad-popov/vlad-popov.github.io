@@ -1,26 +1,27 @@
 var addTasks = function addTasks() {
     var list = document.getElementById('todo-list'),
-        old = document.getElementsByClassName('selected'),
+        oldSelect = document.getElementsByClassName('selected'),
         length = tasks.length,
-        i = 0;
+        i = 0,
+        newSelect = document.getElementById('all');
 
-    event.target.className = 'selected';
+    oldSelect[0].classList.remove('selected');
+    newSelect.children[0].className = 'selected';
 
     list.innerHTML = '';
 
     for (i; i < length; i++) {
         var li = document.createElement('li');
 
-            li.innerHTML = getTask(i, tasks[i].name);
-            list.appendChild(li);
+        li.innerHTML = getTask(i, tasks[i].name);
+        list.appendChild(li);
 
         if (tasks[i].status === 'Completed') {
             li.className = 'completed';
             document.getElementById('clear-completed').style.display = '';
         }
     }
-
-    counter(length);
+    counter();
 };
 
 
@@ -40,11 +41,22 @@ var addTask = function () {
 };
 //////////////////////// доделать
 var correction = function () {
+    var newInput = document.createElement('input'),
+        parent = event.target.parentNode.parentNode;
+
+    console.log();
 
     if (event.target.className === '') {
         event.target.classList.add('editing');
     } else if (event.target.className != '') {
         event.target.classList.remove('editing');
     }
-//    document.onclick = parent.getElementsByTagName('label').classList.remove('editing');
+    parent.appendChild(newInput);
+    newInput.className = 'edit';
+    if (event.keyCode === 13) {
+
+    }
+
+
+   console.log(event.target.parentNode.parentNode);
 };

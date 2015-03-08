@@ -7,14 +7,10 @@ var showCompleted = function () {
     old[0].classList.remove('selected');
     list.innerHTML = '';
 
-    window.event.target.className = 'selected';
+    event.target.className = 'selected';
 
     for (var i = 0; i < length; i++) {
-
-        if (tasks[i] === undefined) {
-
-        }
-        else if (tasks[i].status === 'Completed') {
+        if (tasks[i].status === 'Completed') {
             var li = document.createElement('li');
             li.innerHTML = getTask(i, tasks[i].name);
             li.className = 'completed';
