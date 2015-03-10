@@ -1,6 +1,7 @@
 var clearCompleted = function () {
     var length = tasks.length,
-        i = 0;
+        i = 0,
+        allCompleteInput = document.getElementById('toggle-all');
 
     for (i; i < length; i++) {
         if (tasks[i] === undefined) {
@@ -10,5 +11,6 @@ var clearCompleted = function () {
             i--;
         }
     }
+    allCompleteInput.checked = false;
     addTasks();
 };

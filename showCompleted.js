@@ -2,7 +2,8 @@ var showCompleted = function () {
     var list = document.getElementById('todo-list'),
         count = document.getElementById('todo-count').firstChild,
         old = document.getElementsByClassName('selected'),
-        length = tasks.length;
+        length = tasks.length,
+        checkbox = document.getElementsByClassName('toggle');
 
     old[0].classList.remove('selected');
     list.innerHTML = '';
@@ -15,6 +16,7 @@ var showCompleted = function () {
             li.innerHTML = getTask(i, tasks[i].name);
             li.className = 'completed';
             list.appendChild(li);
+            checkbox[i].checked = true;
         }
     }
 };

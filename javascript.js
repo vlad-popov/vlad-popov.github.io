@@ -1,16 +1,19 @@
-var addTasks = function addTasks() {
+var addTasks = function () {
     var list = document.getElementById('todo-list'),
         oldSelect = document.getElementsByClassName('selected'),
         length = tasks.length,
         i = 0,
-        newSelect = document.getElementById('all');
+        newSelect = document.getElementById('all'),
+        checkbox = document.getElementsByClassName('toggle');
+
+    console.log(checkbox);
 
     oldSelect[0].classList.remove('selected');
     newSelect.children[0].className = 'selected';
 
     list.innerHTML = '';
 
-    for (i; i < length; i++) {
+    for (; i < length; i++) {
         var li = document.createElement('li');
 
         li.innerHTML = getTask(i, tasks[i].name);
@@ -18,6 +21,7 @@ var addTasks = function addTasks() {
 
         if (tasks[i].status === 'Completed') {
             li.className = 'completed';
+            checkbox[i].checked = true;
             document.getElementById('clear-completed').style.display = '';
         }
     }
@@ -39,24 +43,22 @@ var addTask = function () {
         input.value = '';
     }
 };
-//////////////////////// доделать
-var correction = function () {
+
+
+var correction = function (task, index) {
     var newInput = document.createElement('input'),
         parent = event.target.parentNode.parentNode;
 
-    console.log();
+        newInput.className = 'edit';
+        parent.appendChild(newInput);
+        newInput.value = task.innerHTML;
+        parent.classList.add('editing');
+        newInput.focus();
 
-    if (event.target.className === '') {
-        event.target.classList.add('editing');
-    } else if (event.target.className != '') {
-        event.target.classList.remove('editing');
-    }
-    parent.appendChild(newInput);
-    newInput.className = 'edit';
-    if (event.keyCode === 13) {
-
-    }
-
-
-   console.log(event.target.parentNode.parentNode);
+    newInput.addEventListener('blur', function () {
+        parent.classList.remove('editing');
+        tasks[index].name = newInput.value;
+        parent.removeChild(newInput);
+        addTasks();
+    }, false);
 };

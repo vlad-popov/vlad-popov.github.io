@@ -17,4 +17,5 @@ var makeAllCompleted = function (input) {
         }
     }
     document.getElementById('todo-count').innerHTML = '<strong>0</strong> items left';
+    counter();
 };
