@@ -1,12 +1,11 @@
 var addTasks = function () {
-    var list = document.getElementById('todo-list'),
-        oldSelect = document.getElementsByClassName('selected'),
+    var list = $('#todo-list'),
+        oldSelect = $('.selected'),
         length = tasks.length,
         i = 0,
-        newSelect = document.getElementById('all'),
-        checkbox = document.getElementsByClassName('toggle');
+        newSelect = $('#all'),
+        checkbox = $('.toggle');
 
-    console.log(checkbox);
 
     oldSelect[0].classList.remove('selected');
     newSelect.children[0].className = 'selected';
@@ -19,10 +18,11 @@ var addTasks = function () {
         li.innerHTML = getTask(i, tasks[i].name);
         list.appendChild(li);
 
+
         if (tasks[i].status === 'Completed') {
             li.className = 'completed';
             checkbox[i].checked = true;
-            document.getElementById('clear-completed').style.display = '';
+            $('#clear-completed').style.display = '';
         }
     }
     counter();
@@ -30,7 +30,7 @@ var addTasks = function () {
 
 
 var addTask = function () {
-    var input = document.getElementById('new-todo'),
+    var input = $('#new-todo'),
         newTodo = {};
 
     if (event.keyCode === 13 && input.value === '') {
@@ -61,4 +61,11 @@ var correction = function (task, index) {
         parent.removeChild(newInput);
         addTasks();
     }, false);
+};
+
+var changeTask = function (index, change, value) {
+    console.log(tasks[index].change);
+
+    tasks[index].change = value;
+
 };

@@ -1,7 +1,7 @@
 var clearCompleted = function () {
     var length = tasks.length,
         i = 0,
-        allCompleteInput = document.getElementById('toggle-all');
+        allCompleteInput = $('#toggle-all');
 
     for (i; i < length; i++) {
         if (tasks[i] === undefined) {

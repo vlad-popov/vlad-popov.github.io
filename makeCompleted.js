@@ -3,16 +3,14 @@ var makeCompleted = function (elem, i) {
 
     if (parent.contains('completed')) {
         parent.remove('completed');
-//        elem[i].checked = true;
-        tasks[i].status = 'Active';
+        changeTask(i, status, 'Active');
     } else {
         parent.add('completed');
-        tasks[i].status = 'Completed';
-//        elem[i].checked = false;
+        changeTask(i, status, 'Completed');
     }
 
     if (tasks[i].status === 'Completed') {
-        document.getElementById('clear-completed').style.display = '';
+        $('#clear-completed').style.display = '';
     }
     counter();
 };

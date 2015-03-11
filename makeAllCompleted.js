@@ -1,9 +1,9 @@
 var makeAllCompleted = function (input) {
-    var li = document.getElementById('todo-list').children,
-        checkbox = document.getElementsByClassName('toggle'),
+    var li = $('#todo-list').children,
+        checkbox = $('.toggle'),
         length = tasks.length;
 
-    document.getElementById('clear-completed').style.display = '';
+    $('#clear-completed').style.display = '';
 
     for (var i = 0; i < length; i++) {
         if (input.checked === true) {
@@ -16,6 +16,6 @@ var makeAllCompleted = function (input) {
             checkbox[i].checked = false;
         }
     }
-    document.getElementById('todo-count').innerHTML = '<strong>0</strong> items left';
+    $('#todo-count').innerHTML = '<strong>0</strong> items left';
     counter();
 };

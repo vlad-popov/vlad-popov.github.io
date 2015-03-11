@@ -1,9 +1,8 @@
 var showCompleted = function () {
-    var list = document.getElementById('todo-list'),
-        count = document.getElementById('todo-count').firstChild,
-        old = document.getElementsByClassName('selected'),
+    var list = $('#todo-list'),
+        old = $('#selected'),
         length = tasks.length,
-        checkbox = document.getElementsByClassName('toggle');
+        checkbox = $('.toggle');
 
     old[0].classList.remove('selected');
     list.innerHTML = '';
