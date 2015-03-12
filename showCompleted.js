@@ -1,6 +1,6 @@
 var showCompleted = function () {
     var list = $('#todo-list'),
-        old = $('#selected'),
+        old = $('.selected'),
         length = tasks.length,
         checkbox = $('.toggle');
 
@@ -15,6 +15,7 @@ var showCompleted = function () {
             li.innerHTML = getTask(i, tasks[i].name);
             li.className = 'completed';
             list.appendChild(li);
+            console.log(1);
             checkbox[i].checked = true;
         }
     }
