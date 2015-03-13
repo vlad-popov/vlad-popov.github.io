@@ -1,10 +1,9 @@
 var counter = function () {
         var scorer = 0,
-            count = $('#todo-count'),
-            length = tasks.length;
+            count = $('#todo-count');
 
-        for (var i = 0; i < length; i++) {
-            if (tasks[i].status === 'Active') {
+        for (var i = 0; i < tasks.length; i++) {
+            if (checkTask(i, 'status', 'Active')) {
                 scorer++;
             }
         }
@@ -15,7 +14,6 @@ var counter = function () {
         } else if (scorer > 1) {
             count.innerHTML = '<strong>' + scorer + '</strong> items left';
         }
-
         if (scorer > 0) {
             $('#main').style.display = '';
             $('#footer').style.display = '';

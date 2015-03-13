@@ -1,12 +1,11 @@
 var clearCompleted = function () {
-    var length = tasks.length,
-        i = 0,
+    var i = 0,
         allCompleteInput = $('#toggle-all');
 
-    for (i; i < length; i++) {
+    for (i; i < tasks.length; i++) {
         if (tasks[i] === undefined) {
             break
-        } else if (tasks[i].status === 'Completed') {
+        } else if (checkTask(i, 'status', 'Completed')) {
             tasks.splice(i, 1);
             i--;
         }

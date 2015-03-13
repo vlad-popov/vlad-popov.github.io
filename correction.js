@@ -10,7 +10,7 @@ var correction = function (task, index) {
 
     newInput.addEventListener('blur', function () {
         parent.classList.remove('editing');
-        tasks[index].name = newInput.value;
+        changeTask(index, 'name', newInput.value);
         parent.removeChild(newInput);
         addTasks();
     }, false);

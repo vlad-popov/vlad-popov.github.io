@@ -1,22 +1,25 @@
+checkbox = $('.toggle');
+todoList = $('#todo-list');
+old = $('.selected');
+
+
 var addTasks = function () {
-    var list = $('#todo-list'),
-        oldSelect = $('.selected'),
+    var oldSelect = $('.selected'),
         length = tasks.length,
         i = 0,
-        newSelect = $('#all'),
-        checkbox = $('.toggle');
+        newSelect = $('#all');
 
 
     oldSelect[0].classList.remove('selected');
     newSelect.children[0].className = 'selected';
 
-    list.innerHTML = '';
+    todoList.innerHTML = '';
 
     for (; i < length; i++) {
         var li = document.createElement('li');
 
         li.innerHTML = getTask(i, tasks[i].name);
-        list.appendChild(li);
+        todoList.appendChild(li);
 
 
         if (checkTask(i, 'status', 'Completed')) {
@@ -53,6 +56,5 @@ var checkTask = function (index, check, value) {
     if (tasks[index][check] === value) {
         return true;
     }
-
 };
 
